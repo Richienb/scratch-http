@@ -1,0 +1,36 @@
+{
+	"name": "scratch-http",
+	"version": "0.1.0",
+	"private": true,
+	"main": "index.js",
+	"repository": "https://github.com/Richienb/scratch-http.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "rollup --config --watch",
+		"build": "rollup --config",
+		"lint": "xo"
+	},
+	"dependencies": {
+		"retus": "^1.1.1"
+	},
+	"devDependencies": {
+		"@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
+		"@babel/core": "^7.10.5",
+		"@babel/preset-env": "^7.10.4",
+		"@rollup/plugin-babel": "^5.1.0",
+		"@rollup/plugin-commonjs": "^14.0.0",
+		"@rollup/plugin-node-resolve": "^8.4.0",
+		"eslint-config-richienb": "^0.4.2",
+		"rollup": "^2.23.0",
+		"rollup-plugin-serve": "^1.0.3",
+		"scratch-gui": "SheepTester/scratch-gui#gh-pages",
+		"xo": "^0.32.1"
+	},
+	"xo": {
+		"extends": "richienb",
+		"rules": {
+			"import/no-unresolved": 0
+		}
+	}
+}
