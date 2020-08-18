@@ -1,9 +1,10 @@
 /* global Scratch */
+/// <reference types="scratch-env"/>
 
 import retus from "retus"
 
-class ScratchHTTP {
-	getInfo() {
+class ScratchHTTP implements ScratchExtension {
+	getInfo(): ExtensionMetadata {
 		return {
 			id: "ScratchHTTP",
 			name: "HTTP Requests",
@@ -25,8 +26,8 @@ class ScratchHTTP {
 		}
 	}
 
-	httpRequest({ method, url }) {
-		return retus(url, { method }).body
+	httpRequest({ method, url }: { method: retus.HTTPMethod, url: string }): string {
+		return retus<string>(url, { method }).body
 	}
 }
 

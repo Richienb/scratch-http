@@ -7,30 +7,26 @@
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"start": "rollup --config --watch",
-		"build": "rollup --config",
+		"watch": "scratcher watch",
+		"build": "scratcher build",
 		"lint": "xo"
 	},
 	"dependencies": {
-		"retus": "^1.1.1"
+		"retus": "^1.1.2"
 	},
 	"devDependencies": {
-		"@ampproject/rollup-plugin-closure-compiler": "^0.26.0",
-		"@babel/core": "^7.10.5",
-		"@babel/preset-env": "^7.10.4",
-		"@rollup/plugin-babel": "^5.1.0",
-		"@rollup/plugin-commonjs": "^14.0.0",
-		"@rollup/plugin-node-resolve": "^8.4.0",
+		"@types/scratch-env": "^3.0.0",
 		"eslint-config-richienb": "^0.4.2",
-		"rollup": "^2.23.0",
-		"rollup-plugin-serve": "^1.0.3",
-		"scratch-gui": "SheepTester/scratch-gui#gh-pages",
-		"xo": "^0.32.1"
+		"scratcher": "^1.0.1",
+		"xo": "^0.33.0"
 	},
 	"xo": {
 		"extends": "richienb",
 		"rules": {
-			"import/no-unresolved": 0
+			"@typescript-eslint/no-unsafe-return": 0,
+			"@typescript-eslint/no-unsafe-member-access": 0,
+			"@typescript-eslint/no-unsafe-call": 0,
+			"node/no-unsupported-features/es-syntax": 0
 		}
 	}
 }
