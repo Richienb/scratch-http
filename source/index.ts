@@ -1,7 +1,7 @@
 /* global Scratch */
 /// <reference types="scratch-env"/>
 
-import retus from "retus"
+import ky from "ky"
 
 class ScratchHTTP implements ScratchExtension {
 	getInfo(): ExtensionMetadata {
@@ -26,8 +26,8 @@ class ScratchHTTP implements ScratchExtension {
 		}
 	}
 
-	httpRequest({ method, url }: { method: retus.HTTPMethod, url: string }): string {
-		return retus<string>(url, { method }).body
+	async httpRequest({method, url}: {method: 'get' | 'post' | 'put' | 'delete' | 'patch' | 'head', url: string}) {
+		return await ky(url, {method}).text()
 	}
 }
 
