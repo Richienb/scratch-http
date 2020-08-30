@@ -15,6 +15,7 @@ class ScratchHTTP implements ScratchExtension {
 				arguments: {
 					method: {
 						type: Scratch.ArgumentType.STRING,
+						menu: "method",
 						defaultValue: "GET"
 					},
 					url: {
@@ -22,11 +23,16 @@ class ScratchHTTP implements ScratchExtension {
 						defaultValue: "https://www.random.org/strings/?num=1&len=10&digits=on&upperalpha=on&loweralpha=on&format=plain"
 					}
 				}
-			}]
+			}],
+			menus: {
+				method: {
+					items: ["GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH"]
+				} as unknown as ExtensionMenuMetadata // TODO: Remove when https://github.com/LLK/scratch-vm/issues/2582 is closed.
+			}
 		}
 	}
 
-	async httpRequest({method, url}: {method: 'get' | 'post' | 'put' | 'delete' | 'patch' | 'head', url: string}) {
+	async httpRequest({method, url}: {method: string, url: string}) {
 		return await ky(url, {method}).text()
 	}
 }
