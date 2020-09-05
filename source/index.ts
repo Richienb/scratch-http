@@ -25,9 +25,7 @@ class ScratchHTTP implements ScratchExtension {
 				}
 			}],
 			menus: {
-				method: {
-					items: ["GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH"]
-				} as unknown as ExtensionMenuMetadata // TODO: Remove when https://github.com/LLK/scratch-vm/issues/2582 is closed.
+				method: ["GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH"]
 			}
 		}
 	}
